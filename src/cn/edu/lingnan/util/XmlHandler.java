@@ -34,8 +34,4 @@ public class XmlHandler extends DefaultHandler {
         return hm;
     }
 
-
-
-
-
 }

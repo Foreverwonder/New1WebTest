@@ -7,8 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cn.edu.lingnan.dao.StudentDao;
+import cn.edu.lingnan.dto.StudentDto;
 
 //@WebServlet("/login")相当于web.xml文件里的最后一大段
 public class LoginServlet extends HttpServlet {
@@ -22,16 +24,23 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("页面的参数用户名和密码分别是："+sname+"  "+password);
 		//2处理业务逻辑,大部分时候会访问数据库
 		StudentDao sd=new StudentDao();
-		boolean flag=sd.findStudentByNameAndPassword(sname,password);
-//		boolean flag=true;
+		StudentDto sdto =sd.findStudentByNameAndPassword(sname, password);
+//		boolean flag=sd.findStudentByNameAndPassword(sname,password);
+		int superuser =sdto.getSuperuser();
+		HttpSession session=req.getSession();
+		session.setAttribute("superuser",superuser);
 		//3响应,返回某些参数到页面
-		if(flag)
-		resp.sendRedirect(req.getContextPath()+"/LoginSuccessful.html");
+//		if(flag)
+//		resp.sendRedirect(req.getContextPath()+"/LoginSuccessful.html");
+//		resp.sendRedirect(req.getContextPath()+"/ok.html");
+//		else
+//			resp.sendRedirect(req.getContextPath()+"/LoginFailed.html");
+		if(superuser!=0) {
+			resp.sendRedirect(req.getContextPath()+"/ok.html");
+		}
 		else
-			resp.sendRedirect(req.getContextPath()+"/LoginFailed.html");
-		
-		
-		
+			resp.sendRedirect(req.getContextPath()+"/index.html");
+			
 		
 		
 	}
