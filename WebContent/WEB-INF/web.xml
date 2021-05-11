@@ -18,7 +18,7 @@
 <servlet-name>ServletTest</servlet-name>
 <url-pattern>/servletTest</url-pattern>
   </servlet-mapping>
-  
+
   <servlet>
 <servlet-name>LoginServlet</servlet-name>
 <servlet-class>cn.edu.lingnan.servlet.LoginServlet</servlet-class>
@@ -27,7 +27,7 @@
 <servlet-name>LoginServlet</servlet-name>
 <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
+
   <filter>
   	<filter-name>AuthorityFilter</filter-name>
   	<filter-class>cn.edu.lingnan.filter.AuthorityFilter</filter-class>
@@ -36,10 +36,5 @@
     	<filter-name>AuthorityFilter</filter-name>
   		<url-pattern>/admin/*</url-pattern>
   </filter-mapping>
-  
-  
-  
-  
-  
-  
+
 </web-app>

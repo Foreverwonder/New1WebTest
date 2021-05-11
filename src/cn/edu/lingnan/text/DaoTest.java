@@ -48,7 +48,7 @@ public class DaoTest {
                 System.out.println("GoodBye~ I'm looking forward to see you next time.");
                 System.exit(0);
             } else {
-                System.out.println("您输入的信息有误！请重新输入！");
+                System.out.println("您输入的信息有误！请重新输入！");//-----------------
             }
             System.out.println("-------------------Welcome to the student achievement management system!------------- ");
             System.out.println("-------------------Please select the corresponding number to test（Main Menu）------------- ");
