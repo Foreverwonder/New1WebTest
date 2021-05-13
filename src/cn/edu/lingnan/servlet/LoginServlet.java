@@ -22,14 +22,16 @@ public class LoginServlet extends HttpServlet {
 		//1从页面获取参数,从客户端获取提交的参数
 		String sname=req.getParameter("sname");
 		String password=req.getParameter("password");
-		System.out.println("页面的参数用户名和密码分别是:"+sname+"  "+password);
+		System.out.println("页面的参数用户名和密码分别是："+sname+"  "+password);
 		//2处理业务逻辑,大部分时候会访问数据库
 		StudentDao sd=new StudentDao();
 		StudentDto sdto =sd.findStudentByNameAndPassword(sname, password);
 //		boolean flag=sd.findStudentByNameAndPassword(sname,password);
 		int superuser =sdto.getSuperuser();
+		String username=sdto.getSname();
 		HttpSession session=req.getSession();
 		session.setAttribute("superuser",superuser);
+		session.setAttribute("username",username);
 		//3响应,返回某些参数到页面
 //		if(flag)
 //		resp.sendRedirect(req.getContextPath()+"/LoginSuccessful.html");
