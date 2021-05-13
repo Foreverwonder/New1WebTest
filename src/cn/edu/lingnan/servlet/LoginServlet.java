@@ -43,7 +43,8 @@ public class LoginServlet extends HttpServlet {
 		if(superuser!=0)
 //		if(true)
 		{
-			resp.sendRedirect(req.getContextPath()+"/ok.html");
+//			resp.sendRedirect(req.getContextPath()+"/ok.html");
+			resp.sendRedirect(req.getContextPath()+"/ok.jsp");
 		}
 		else
 			resp.sendRedirect(req.getContextPath()+"/index.html");
