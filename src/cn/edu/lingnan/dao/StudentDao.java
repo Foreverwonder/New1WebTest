@@ -265,7 +265,29 @@ public class StudentDao {
 		}
 		return flag;
 	}
-
+	//更新学生表_以dto的方式全部更新
+	public int updataInfotoStudent(StudentDto _sd) {
+		int flag = 0;
+		Connection conn = null;
+		PreparedStatement prep = null;
+		ResultSet rs=null;
+		try {
+			conn = DataAccess.getConnection();
+			prep = conn.prepareStatement
+					("update student set sname =? ,password=?,superuser=? where sid=? ");
+			prep.setString(1, _sd.getSname());
+			prep.setString(2, _sd.getPassword());
+			prep.setInt(3, _sd.getSuperuser());
+			prep.setString(4,_sd.getSid());
+			prep.executeUpdate();
+			flag = 1;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DataAccess.closeConnection(conn, prep);
+		}
+		return flag;
+	}
 	// 删除一条学生记录
 	public boolean deleteStudent(String _sid) throws SQLException {
 		boolean flag = false;
