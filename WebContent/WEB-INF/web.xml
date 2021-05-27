@@ -36,5 +36,12 @@
     	<filter-name>AuthorityFilter</filter-name>
   		<url-pattern>/admin/*</url-pattern>
   </filter-mapping>
+  <!--5.27  -->
+<jsp-config>
+	<taglib>
+		<taglib-uri>/jstlc</taglib-uri>
+		<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+	</taglib>
+</jsp-config>
 
 </web-app>
