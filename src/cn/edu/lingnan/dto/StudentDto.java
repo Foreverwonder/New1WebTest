@@ -6,6 +6,7 @@ public class StudentDto {
 	private String sid;
 	private String sname;
 	private String password;
+	private int superuser;
 	public String getSid() {
 		return sid;
 	}
@@ -30,6 +31,6 @@ public class StudentDto {
 	public void setSuperuser(int superuser) {
 		this.superuser = superuser;
 	}
-	private int superuser;
+
 	
 }

@@ -1,20 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=GBK"
-    pageEncoding="GBK"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="GBK">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>用户注册页面</title>
+<%--    <link rel="stylesheet" type="text/css"  href="table.css">--%>
+    <script type="text/javascript" src="register.js"></script>
 </head>
 <body style="text-align: center">
-<h1>�û�ע��ҳ��</h1>
+<h1>用户注册页面</h1>
 
-<%--�и�js�ļ�ûд-----------------------------------------%>
+<%--有个js文件没写-----------------------------------------%>
 
 <form name="form" action="register">
-    <table clss="hoverable" align="center">
+    <table class="hoverable" align="center">
     <tr>
-        <td>�û����</td>
+        <td>用户编号</td>
         <td><input type="text" name="sid" id="sid">
             <font color="red">*</font>
         </td>
@@ -22,38 +24,38 @@
 
         <tr>
         
-            <td>�û�����</td>
+            <td>用户名称</td>
             <td><input type="text" name="sname" id="sname">
                 <font color="red">*</font>
             </td>
         </tr>
 
         <tr>
-            <td>�û�����</td>
+            <td>用户密码</td>
             <td><input type="password" name="password" id="password">
                 <font color="red">*</font>
             </td>
         </tr>
 
         <tr>
-            <td>ȷ������</td>
+            <td>确认密码</td>
             <td><input type="password" name="password2" id="password2">
                 <font color="red">*</font>
             </td>
         </tr>
         <tr>
-            <td>�û�Ȩ��</td>
+            <td>用户权限</td>
             <td>
                 <select name="superuser">
-                    <option Selected value="2">��ͨ�û�
-                    <option value="1">����Ա
+                    <option Selected value="2">普通用户
+                    <option value="1">管理员
                 </select>
             </td>
         </tr>
     <tr>
         <td colspan="2" align="center">
-            <input type="submit" value="ע��" onclick="return check();"/>
-            <input type="Reset" value="ȡ��"/>
+            <input type="submit" value="注册" onclick="return check();"/>
+            <input type="Reset" value="取消"/>
         </td>
     </tr>
     </table>
