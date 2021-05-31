@@ -44,6 +44,12 @@
             </td>
         </tr>
         <tr>
+            <td>用户邮箱</td>
+            <td><input type="text" name="email" id="email">
+                <font color="red">*</font>
+            </td>
+        </tr>
+        <tr>
             <td>用户权限</td>
             <td>
                 <select name="superuser">

@@ -22,6 +22,7 @@ public class StuInsertServlet extends HttpServlet {
         String sname=req.getParameter("sname");
         String password=req.getParameter("password");
         String superuser=req.getParameter("superuser");
+        String email=req.getParameter("email");
 //        System.out.println("--------"+sid);
         //2处理业务逻辑
         StudentDao sd =new StudentDao();

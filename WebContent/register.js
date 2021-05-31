@@ -2,9 +2,15 @@
  * 
  */
 function check(){
-    if(form.username.value ==""){
+    if(form.sid.value ==""){
+        alert("用户编号不能为空!");
+        form.sid.focus();
+        return false;
+    }
+
+    if(form.sname.value ==""){
         alert("用户名不能为空!");
-        form.username.focus();
+        form.sname.focus();
         return false;
     }
     if(form.password.value==""){
@@ -17,7 +23,7 @@ function check(){
         form.password2.focus();
         return false;
     }
-    if(form.password.value !=form.password.value){
+    if(form.password.value!=form.password2.value){
         alert("两次输入的密码不一致!");
         form.password2.focus();
         return false;
@@ -33,6 +39,6 @@ function check(){
         form.email.focus();
         return false;
     }
-
+    alert("恭喜你，注册成功，快去登陆吧！")
 
 }
